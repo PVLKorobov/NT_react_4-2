@@ -1,0 +1,9 @@
+.table__rows {
+    height: 100%;
+    margin: 0px;
+    padding: 10px;
+    list-style: none;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}

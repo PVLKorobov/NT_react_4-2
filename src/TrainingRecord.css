@@ -1,0 +1,28 @@
+.record__wrapper {
+    display: flex;
+
+    .record__date {
+        margin-left: 15px;
+    }
+
+    .record__distance {
+        margin-left: 150px;
+        margin-right: 130px;
+    }
+
+    .record__actions__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .actions__button {
+            height: 24px;
+            width: 24px;
+            margin: 5px;
+            padding: 0px;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
+    }
+}
