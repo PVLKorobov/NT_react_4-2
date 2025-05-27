@@ -8,7 +8,8 @@ function TrainingTable(props) {
             {[...props.rows.keys()].map(date => (
                 <li key={date}>
                     <TrainingRecord recordData={{date: date, distance: props.rows.get(date)}} 
-                                    deleteRecordCallback={props.deleteRecordCallback}/>
+                                    deleteRecordCallback={props.deleteRecordCallback}
+                                    startDateEditCallback={props.startDateEditCallback}/>
                 </li>
             ))}
         </ul>
