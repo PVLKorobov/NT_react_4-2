@@ -21,17 +21,20 @@ function TrainingCalendar() {
             })
     }
 
+    function getDateFromStr(string) {
+        const [day, month, year] = string.split('.')
+        return new Date(`${year}-${month}-${day}`)
+    }
+
     function addRecord(date, distance) {
+        let newDistance = distance
         if (tableRows.has(date)) {
             const oldDistance = tableRows.get(date)
-            setTableRows(currentTableRows => {
-                return new Map(currentTableRows.set(date, distance + oldDistance))
-            })
-        } else {
-            setTableRows(currentTableRows => {
-                return new Map(currentTableRows.set(date, distance))
-            })
+            newDistance = distance + oldDistance
         }
+        setTableRows(currentTableRows => {
+            return new Map([...currentTableRows.set(date, newDistance).entries()].sort((a, b) => {return getDateFromStr(b[0]) - getDateFromStr(a[0])}))
+        })
     }
 
     function onFormSubmit(e) {

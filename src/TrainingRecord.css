@@ -1,5 +1,6 @@
 .record__wrapper {
     display: flex;
+    max-width: 100%;
 
     .record__date {
         margin-left: 15px;
@@ -7,7 +8,11 @@
 
     .record__distance {
         margin-left: 150px;
-        margin-right: 130px;
+        margin-right: 90px;
+        width: 55px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .record__actions__wrapper {
