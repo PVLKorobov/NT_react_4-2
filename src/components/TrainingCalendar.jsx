@@ -1,4 +1,4 @@
-import './TrainingCalendar.css'
+import styles from './TrainingCalendar.module.css'
 import TrainingTable from './TrainingTable'
 import { useState } from "react"
 
@@ -71,34 +71,34 @@ function TrainingCalendar() {
 
     
     return (
-        <div className="training-calendar__wrapper">
-            <form onSubmit={onFormSubmit} className="training-calendar__form">
-                <section className="form__input__section">
-                    <label htmlFor="date">Дата (ДД.ММ.ГГ)</label>
-                    <input className="form__input" 
+        <div className={styles["training-calendar__wrapper"]}>
+            <form onSubmit={onFormSubmit} className={styles["training-calendar__form"]}>
+                <section className={styles.form__input__section}>
+                    <label htmlFor="date">Дата (ДД.ММ.ГГГГ)</label>
+                    <input className={styles.form__input} 
                         value={dateInput} 
                         onChange={(e) => {setDateInput(e.target.value); setEditDate(null)}} 
                         type="text" 
                         name="date"/>
                 </section>
-                <section className="form__input__section">
+                <section className={styles.form__input__section}>
                     <label htmlFor="distance">Пройдено км</label>
-                    <input className="form__input" 
+                    <input className={styles.form__input} 
                         value={distanceInput} 
                         onChange={(e) => {setDistanceInput(e.target.value)}} 
                         type="text" 
                         name="distance"/>
                 </section>
-                <section className="form__button__section">
+                <section className={styles.form__button__section}>
                     <button type="submit">ОК</button>
                 </section>
             </form>
-            <section className="training-calendar__table__headers">
-                <p className="table__header">Дата (ДД.ММ.ГГ)</p>
-                <p className="table__header">Пройдено км</p>
-                <p className="table__header">Действия</p>
+            <section className={styles["training-calendar__table__headers"]}>
+                <p className={styles.table__header}>Дата (ДД.ММ.ГГГГ)</p>
+                <p className={styles.table__header}>Пройдено км</p>
+                <p className={styles.table__header}>Действия</p>
             </section>
-            <section className="training-calendar__table">
+            <section className={styles["training-calendar__table"]}>
                 <TrainingTable rows={tableRows} deleteRecordCallback={deleteRecord} startDateEditCallback={startDateEdit}/>
             </section>
         </div>

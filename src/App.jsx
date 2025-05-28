@@ -1,5 +1,5 @@
 import './App.css'
-import TrainingCalendar from './TrainingCalendar'
+import TrainingCalendar from './components/TrainingCalendar'
 
 
 function App() {
